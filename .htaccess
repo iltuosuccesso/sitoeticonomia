@@ -3,5 +3,5 @@ RewriteEngine On
 AddDefaultCharset utf-8
 
 # Sito pubblico di Eticonomia srl (copia del sito evobrain.club con logo e dati aziendali di
-# Eticonomia, 19/10/2026). L'accesso e la registrazione restano sul portale office.evobrain.club.
+# Eticonomia, 19/10/2026). Accesso e area membri: app.eticonomia.com (backoffice di Eticonomia).
 RewriteRule ^faq/?$ /faq.html [R=301,L]
