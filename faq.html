@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <title>FAQ — Eticonomia</title>
+<meta name="description" content="Domande frequenti su Eticonomia: iscrizione, Talent ID, Talenti, EVO, gettone, EvoEnergy, Marketplace e molto altro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Sora:wght@600;700;800;900&display=swap">
+<link rel="stylesheet" href="responsive.css">
+<style>
+:root{
+  --blue:#1a4db5;--blue-light:#3b82f6;--blue-dark:#0f1d3d;
+  --gold:#e8a020;--gold-l:#f5c842;
+  --bg:#f8faff;--white:#ffffff;
+  --text:#334155;--text-m:#64748b;
+  --border:#e2e8f0;
+  --shadow:0 4px 24px rgba(13,45,110,0.06);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+h1,h2,h3{font-family:'Sora',sans-serif;color:var(--blue-dark);line-height:1.2;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:14px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(16px);
+  box-shadow:0 2px 20px rgba(13,45,110,0.08);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-links{display:flex;gap:30px;list-style:none;}
+.nav-links a{color:var(--text-m);text-decoration:none;font-size:13px;font-weight:600;transition:color 0.3s;}
+.nav-links a:hover{color:var(--blue);}
+.has-dropdown{position:relative;}
+.has-dropdown::after{content:'';position:absolute;top:100%;left:0;right:0;height:12px;}
+.dropdown-toggle{cursor:pointer;}
+.arrow-d{font-size:10px;margin-left:2px;}
+.dropdown-menu{
+  display:none;position:absolute;top:calc(100% + 0px);left:0;
+  background:#fff;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,0.12);
+  padding:10px 0;min-width:220px;list-style:none;z-index:210;padding-top:8px;
+}
+.has-dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:8px 18px;font-size:13px;color:var(--text);white-space:nowrap;}
+.dropdown-menu a:hover{background:#f1f5ff;color:var(--blue);}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn-outline-nav{padding:8px 20px;border:1.5px solid var(--blue);border-radius:8px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;transition:all 0.3s;}
+.btn-outline-nav:hover{background:var(--blue);color:#fff;}
+.btn-blue-nav{padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--blue),var(--blue-light));box-shadow:0 4px 14px rgba(26,77,181,0.3);transition:all 0.3s;}
+.btn-blue-nav:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,77,181,0.4);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;}
+.hamburger span{width:24px;height:2.5px;background:var(--blue-dark);border-radius:2px;transition:all 0.3s;display:block;}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-nav-overlay{
+  display:none;position:fixed;inset:0;z-index:150;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:24px;
+  padding:80px 30px 40px;
+}
+.mobile-nav-overlay.open{display:flex;}
+.mobile-nav-overlay a{font-size:18px;font-weight:700;color:var(--blue-dark);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);width:100%;text-align:center;}
+.mobile-nav-overlay a:last-child{border-bottom:none;}
+.mobile-nav-overlay .btn-blue-nav{margin-top:16px;padding:14px 36px;font-size:14px;border-radius:10px;border-bottom:none;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-light));box-shadow:0 4px 14px rgba(26,77,181,0.3);}
+
+/* HERO */
+.faq-hero{
+  padding:120px 30px 50px;text-align:center;
+  background:linear-gradient(135deg,#0b1d45 0%,#1a3a7a 50%,#2563eb 100%);
+  color:#fff;
+}
+.faq-hero h1{font-size:clamp(30px,5vw,48px);color:#fff;margin-bottom:10px;}
+.faq-hero p{font-size:16px;color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto;}
+
+/* FAQ CONTENT */
+.faq-wrap{max-width:820px;margin:0 auto;padding:50px 30px 60px;}
+.faq-category{margin-bottom:40px;}
+.faq-category h2{font-size:22px;color:var(--blue);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.faq-item{margin-bottom:4px;}
+.faq-q{
+  width:100%;text-align:left;
+  background:var(--white);border:1px solid var(--border);border-radius:10px;
+  padding:16px 20px;font-size:15px;font-weight:700;color:var(--blue-dark);
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  transition:all 0.2s;font-family:'Nunito',sans-serif;
+}
+.faq-q:hover{background:#f1f5ff;border-color:var(--blue);}
+.faq-q .icon{font-size:20px;color:var(--blue);transition:transform 0.3s;flex-shrink:0;margin-left:12px;}
+.faq-item.open .faq-q .icon{transform:rotate(45deg);}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height 0.3s ease;
+  background:var(--white);border:1px solid var(--border);border-top:none;
+  border-radius:0 0 10px 10px;margin-top:-4px;
+}
+.faq-a-inner{padding:16px 20px;font-size:14px;line-height:1.8;color:var(--text);}
+.faq-a-inner strong{color:var(--blue-dark);}
+.faq-item.open .faq-a{max-height:500px;}
+
+/* FOOTER */
+footer{background:var(--blue-dark);padding:30px 20px;text-align:center;}
+.footer-legal{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:12px;}
+.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;}
+.footer-links a:hover{color:rgba(255,255,255,0.7);}
+</style>
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {"countryDetection":false,"enableTcf":true,"enableUspr":true,"floatingPreferencesButtonDisplay":"bottom-right","perPurposeConsent":true,"siteId":2565931,"tcfPurposes":{"2":"consent_only","7":"consent_only","8":"consent_only","9":"consent_only","10":"consent_only"},"whitelabel":false,"cookiePolicyId":30015764,"lang":"it","banner":{"acceptButtonDisplay":true,"backgroundOverlay":true,"closeButtonRejects":true,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-bottom-right","rejectButtonDisplay":true}};
+</script>
+<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/2565931.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="/assets/images/logo.png" alt="Eticonomia" style="height:38px;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="evoenergy.html">EvoEnergy</a></li>
+    <li class="has-dropdown">
+      <a href="#" class="dropdown-toggle">Gli Strumenti <span class="arrow-d">&#9662;</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="buoni-marketing.html">Talenti</a></li>
+        <li><a href="marketplace.html">Marketplace &amp; Buoni Spesa</a></li>
+        <li><a href="punti-community.html">Gettone</a></li>
+        <li><a href="punti-volume.html">Punti Volume</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="come-funziona.html" class="dropdown-toggle">Come Funziona <span class="arrow-d">&#9662;</span></a><ul class="dropdown-menu"><li><a href="vantaggi.html">Vantaggi</a></li><li><a href="card.html">Le Card</a></li></ul></li>
+    <li><a href="circuito.html">Circuito Aziende</a></li>
+    <li><a href="aziende.html">Servizi Aziende</a></li>
+    <li><a href="consulente.html">Consulente</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="https://office.evobrain.club" class="btn-outline-nav">Accedi</a>
+    <a href="card.html" class="btn-blue-nav">Entra nel Club</a>
+  </div>
+  <button class="hamburger" onclick="document.querySelector('.mobile-nav-overlay').classList.toggle('open');this.classList.toggle('active')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav-overlay"><a href="index.html">Il Club</a><a href="evoenergy.html">EvoEnergy</a><a href="vantaggi.html">Vantaggi</a><a href="buoni-marketing.html">Talenti</a><a href="marketplace.html">Marketplace</a><a href="punti-community.html">Gettone</a><a href="punti-volume.html">Punti Volume</a><a href="card.html">Le Card</a><a href="come-funziona.html">Come Funziona</a><a href="circuito.html">Circuito Aziende</a><a href="aziende.html">Servizi Aziende</a><a href="consulente.html">Consulente</a><a href="card.html" class="btn-blue-nav">Entra nel Club</a></div>
+
+<!-- HERO -->
+<section class="faq-hero">
+  <h1>Domande Frequenti</h1>
+  <p>Tutto quello che devi sapere su Eticonomia, i Talenti, i compensi e i servizi.</p>
+</section>
+
+<!-- FAQ -->
+<div class="faq-wrap">
+
+  <!-- CATEGORIA: IL CLUB -->
+  <div class="faq-category">
+    <h2>Il Club Eticonomia</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Cos'e' Eticonomia?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Eticonomia e' un <strong>club su invito</strong> che valorizza le tue spese quotidiane e le relazioni che costruisci. Ogni membro riceve Talenti di cashback, puo' ricevere compensi sulle bollette pagate nei suoi cerchi, accedere al marketplace e a vantaggi esclusivi.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Come ci si iscrive?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Puoi iscriverti tramite l'<strong>app Eticonomia</strong> (disponibile su <a href="https://play.google.com/store/apps/details?id=com.digysystem.evobrain&hl=it" style="color:var(--blue);">Google Play</a> e <a href="https://apps.apple.com/it/app/evo-brain/id1521490464" style="color:var(--blue);">App Store</a>) oppure su invito di un membro esistente. Il Talent ID costa 15 € all'anno, ma e' gratis se attivi un contratto: si attiva da solo con il primo contratto attivato.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        L'iscrizione ha un costo?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Il <strong>Talent ID costa 15 € all'anno</strong> e ti fa entrare nel Club. Il <strong>Talent ID Plus costa 120 € all'anno</strong> (un solo prezzo, non c'e' una formula mensile) e sblocca tutti i vantaggi. Il Talent ID e' <strong>gratis</strong>: si attiva da solo con il primo contratto attivato. Il Talent ID Plus si acquista sempre.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Posso cancellarmi?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Si, puoi chiudere il tuo account in qualsiasi momento dall'app o contattando l'assistenza. Alla chiusura, i Talenti non utilizzati decadranno.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: LE CARD -->
+  <div class="faq-category">
+    <h2>Le Card</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Qual e' la differenza tra Talent ID e Talent ID Plus?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Il <strong>Talent ID (15 € all'anno)</strong> ti da' 50 Talenti di benvenuto, il 10% di cashback in Talenti pagando tutto in EVO e compensi del 25% sul 1° cerchio. Il <strong>Talent ID Plus (120 € all'anno)</strong> ti da' 200 Talenti di benvenuto, il 30% di cashback, 10 Talent ID da regalare e compensi del 45% · 10% · 10% sui 3 cerchi. Se hai il Plus, vale sempre il Plus.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        La Card ha una scadenza?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Si'. Il Talent ID e il Talent ID Plus si comprano una volta e alla scadenza si rinnovano.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: BUONI MARKETING -->
+  <div class="faq-category">
+    <h2>Talenti</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Cosa sono i Talenti?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Sono il <strong>cashback del club</strong>. Li ricevi pagando tutto in EVO (10% con il Talent ID, 30% con il Talent ID Plus) e con 50 Talenti per ogni contratto attivato. Se nello stesso acquisto usi anche Talenti, il cashback non scatta. Li usi per pagare meno nel <strong>marketplace</strong>, nel catalogo gift e presso i <strong>merchant convenzionati</strong> del circuito Eticonomia. Non sono euro e non si cambiano in denaro.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Posso convertire i Talenti in denaro?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        <strong>No.</strong> I Talenti non sono euro e non si cambiano in denaro, non sono cedibili a terzi e non sono rimborsabili. Sono spendibili esclusivamente all'interno del circuito Eticonomia.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Dove posso usare i Talenti?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Nel <strong>marketplace Eticonomia</strong> (prodotti, integratori, caffe', ricariche telefoniche), nel catalogo gift con oltre 200 brand e presso i <strong>150.000+ negozi</strong> del circuito convenzionato.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: BUONI EVO -->
+  <div class="faq-category">
+    <h2>Buoni Spesa (EVO)</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Cosa sono i Buoni EVO?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        I Buoni EVO sono <strong>buoni multilaterali</strong> utilizzabili presso i merchant del circuito e nel marketplace. Sono il portafoglio con cui paghi nel circuito. Non sono Euro e non sono convertibili in denaro contante.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Posso convertire i Talenti in EVO o in Euro?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        <strong>No.</strong> I Talenti non sono convertibili in Buoni EVO ne' in Euro. Si usano solo per pagare meno, secondo le regole del club.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: PUNTI COMMUNITY -->
+  <div class="faq-category">
+    <h2>Gettone</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Cos'e' il gettone?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Per ogni <strong>bolletta pagata</strong> di un contratto Evoenergy (Evobrain luce e gas), Eticonomia riconosce un gettone di <strong>9 €</strong>. Tolto il 10%, il resto (<strong>8,10 €</strong>) si divide in compensi sui cerchi.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Come funzionano i compensi del gettone?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Ricevi un compenso <strong>ogni mese</strong>, su ogni bolletta pagata nei tuoi cerchi: 25% sul 1° cerchio con il Talent ID, 45% · 10% · 10% sui 3 cerchi con il Talent ID Plus. Esempio Plus, 1° cerchio: 8,10 € × 45% = 3,65 € per bolletta. Le bollette arrivano dal fornitore, storni compresi.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Si guadagna dalle iscrizioni?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        <strong>No.</strong> I compensi vengono solo da servizi e bollette pagate, mai dalle iscrizioni.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: EVOENERGY -->
+  <div class="faq-category">
+    <h2>EvoEnergy</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Cos'e' EvoEnergy?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        EvoEnergy e' il servizio che ti permette di attivare contratti di <strong>luce, gas e fibra</strong> tramite il circuito Eticonomia. Per ogni bolletta pagata dei contratti Evoenergy luce e gas, Eticonomia riconosce un gettone di 9 € che diventa compensi sui cerchi.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Eticonomia e' un fornitore di energia?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        No, Eticonomia agisce come <strong>intermediario</strong>. I contratti di fornitura sono stipulati con operatori partner. Eticonomia ti permette di ottenere vantaggi aggiuntivi (Talenti e compensi) rispetto a un contratto tradizionale.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Posso davvero azzerare la bolletta?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        E' possibile, ma non e' garantito. Con i compensi sulle bollette pagate nei tuoi cerchi la bolletta puo' ridursi fino ad azzerarsi. <strong>È una stima, non una promessa.</strong>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: PAGAMENTI -->
+  <div class="faq-category">
+    <h2>Pagamenti e Regole Mix</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Come funziona il pagamento misto nei negozi?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Nei merchant del circuito puoi pagare con un mix di strumenti: <strong>Talenti</strong> (nella % stabilita dall'esercente) + <strong>Punti</strong> (max 75%). Insieme non possono superare il 95% del totale. Il restante <strong>5% minimo</strong> va pagato in Buoni EVO o Euro.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: CIRCUITO AZIENDE -->
+  <div class="faq-category">
+    <h2>Circuito Aziende</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Come puo' aderire la mia attivita'?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        L'adesione al circuito e' <strong>gratuita</strong>. Puoi registrarti su <a href="https://digypay.it/gestionale/login/registrati" style="color:var(--blue);">digypay.it</a>. Il tuo negozio diventera' un Punto Servizi dove potrai offrire ricariche, bollettini, pagamenti e servizi digitali ai tuoi clienti.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Quali servizi posso offrire come Punto Servizi?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Ricariche telefoniche, pagamento bollettini, PagoPA, F24, gift card, contratti luce/gas/fibra, e molto altro. Tutto senza costi iniziali e con <strong>entrate aggiuntive</strong> per la tua attivita'.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: CONSULENTE -->
+  <div class="faq-category">
+    <h2>Diventare Consulente</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Cos'e' un Consulente Eticonomia?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Il Consulente e' un membro che promuove il Club Eticonomia con continuita', con una lettera d'incarico. Non e' un rapporto di lavoro subordinato. E' <strong>vendita diretta</strong> (Legge 173/2005): il consulente e' un incaricato con tesserino, e i compensi vengono solo dai servizi e dalle bollette pagate dai clienti, mai dalle iscrizioni.
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Come si diventa Consulente?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Firmi la lettera d'incarico e fai verificare i documenti (carta d'identita' e tessera sanitaria, fronte e retro). Non c'e' nessuna licenza a pagamento. Il Talent ID Plus e' consigliato, non obbligatorio. Trovi tutti i dettagli nella pagina <a href="consulente.html" style="color:var(--blue);">Consulente</a>.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: APP -->
+  <div class="faq-category">
+    <h2>App Eticonomia</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Dove scarico l'app?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        L'app Eticonomia e' disponibile su:<br>
+        <strong>Android</strong>: <a href="https://play.google.com/store/apps/details?id=com.digysystem.evobrain&hl=it" style="color:var(--blue);">Google Play Store</a><br>
+        <strong>iOS</strong>: <a href="https://apps.apple.com/it/app/evo-brain/id1521490464" style="color:var(--blue);">App Store</a>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        L'app e' gratuita?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        Si, il download e l'utilizzo dell'app sono completamente gratuiti.
+      </div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA: CONTATTI -->
+  <div class="faq-category">
+    <h2>Assistenza e Contatti</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Come posso contattare l'assistenza?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">
+        <strong>Email</strong>: <a href="mailto:info@eticonomia.com" style="color:var(--blue);">info@eticonomia.com</a><br>
+        <strong>Telefono</strong>: <a href="https://wa.me/393926869831" target="_blank" style="color:var(--blue);">WhatsApp 392 686 9831</a><br>
+        <strong>Sede</strong>: Eticonomia Srl — Via Santa Maria del Colle 1, 02038 Scandriglia (RI)
+      </div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-legal">&copy; 2026 ETICONOMIA SRL — P.IVA 12497251004 — Tutti i diritti riservati</div>
+  <div class="footer-links">
+    <a href="https://www.iubenda.com/privacy-policy/30015764" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+    <a href="termini.html">Termini e Condizioni</a>
+    <a href="https://www.iubenda.com/privacy-policy/30015764/cookie-policy" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Cookie Policy">Cookie Policy</a>
+  </div>
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+  <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.4);line-height:1.8;">
+    Eticonomia Srl — Via Santa Maria del Colle 1, 02038 Scandriglia (RI)<br>
+    <a href="mailto:info@eticonomia.com" style="color:rgba(255,255,255,0.45);text-decoration:none;">info@eticonomia.com</a> &middot; <a href="https://wa.me/393926869831" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">WhatsApp</a>
+  </div>
+</footer>
+
+</body>
+</html>

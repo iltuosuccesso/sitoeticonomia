@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <title>Eticonomia — Il tuo negozio diventa un Punto Servizi</title>
+<meta name="description" content="Con Eticonomia il tuo negozio diventa un Punto Servizi. Offri ricariche, bollettini, utenze, gift card e servizi digitali. Ingresso gratuito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap">
+<style>
+/* ============================================================
+   ETICONOMIA — Landing "Punto Servizi"
+   Palette esatta dall'immagine originale
+   ============================================================ */
+:root{
+  --navy-deep:#0a1f4d;
+  --navy:#142a5c;
+  --navy-mid:#1e3a8a;
+  --blue:#2563eb;
+  --blue-light:#60a5fa;
+  --gold:#f5b400;
+  --gold-light:#ffcc33;
+  --gold-soft:#ffe27a;
+  --gold-glow:#ffd86b;
+  --bg-1:#e8eef9;
+  --bg-2:#dbe5f5;
+  --bg-3:#f4f7fd;
+  --white:#ffffff;
+  --ink:#0f1c3f;
+  --ink-soft:#3b4a6b;
+  --green:#22c55e;
+  --shadow-sm:0 6px 16px rgba(10,31,77,.10);
+  --shadow-md:0 14px 32px rgba(10,31,77,.15);
+  --shadow-lg:0 24px 50px rgba(10,31,77,.25);
+  --shadow-gold:0 10px 28px rgba(245,180,0,.45);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#eef3fb 0%,#dde7f5 100%);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;letter-spacing:-.015em;line-height:1.12;color:var(--navy-deep)}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+/* ============================================================
+   1) HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  padding:24px 0 50px;
+  background:
+    radial-gradient(900px 500px at -10% 0%, rgba(96,165,250,.18), transparent 55%),
+    radial-gradient(800px 450px at 110% 10%, rgba(245,180,0,.12), transparent 55%),
+    linear-gradient(180deg,#f3f7fd 0%,#e6eef9 100%);
+}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Sora';font-weight:800;font-size:28px;color:var(--navy-deep)}
+.brand-mark{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--navy-mid),var(--blue));
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  box-shadow:var(--shadow-sm);position:relative;
+}
+.brand-mark::before{content:"";width:14px;height:14px;border-radius:50%;background:#fff;opacity:.95}
+.brand-mark::after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:var(--navy-deep);top:50%;left:50%;transform:translate(-50%,-50%)}
+
+.pill-free{
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy-deep);
+  font-weight:800;font-size:13px;letter-spacing:.18em;
+  padding:11px 24px;border-radius:999px;
+  box-shadow:var(--shadow-gold);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:34px;align-items:center;
+}
+.hero h1{
+  font-size:clamp(34px,4.6vw,56px);
+  margin-bottom:18px;
+}
+.hero h1 .accent{
+  color:var(--blue);
+  background:linear-gradient(180deg,transparent 65%,var(--gold-soft) 65%);
+  padding:0 4px;
+}
+.hero .lead{font-size:18px;color:var(--ink-soft);max-width:520px;margin-bottom:28px}
+.hero .lead strong{color:var(--navy-deep);font-weight:700}
+
+.cta{
+  display:inline-flex;align-items:center;gap:14px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy-deep);
+  font-family:'Sora';font-weight:700;font-size:18px;
+  padding:18px 30px;border-radius:14px;text-decoration:none;
+  box-shadow:var(--shadow-gold);
+  transition:transform .2s ease,box-shadow .2s ease;
+  border:none;cursor:pointer;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(245,180,0,.55)}
+.cta .arrow{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--navy-deep);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;
+}
+
+.checks{display:flex;flex-wrap:wrap;gap:24px;margin-top:22px}
+.chk{display:flex;align-items:center;gap:8px;color:var(--navy-deep);font-weight:600;font-size:15px}
+.chk::before{
+  content:"";width:18px;height:18px;border-radius:50%;
+  background:var(--green) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/12px no-repeat;
+  flex:none;
+}
+
+/* HERO IMAGE PLACEHOLDER */
+.hero-img{
+  position:relative;height:420px;border-radius:22px;overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  background:linear-gradient(135deg,#1a3a8f 0%,#0a1f4d 100%);
+}
+/* >>> SOSTITUISCI questo blocco .hero-img con: <img src="hero-negoziante.jpg" alt="Negoziante con tablet"> */
+.hero-img-fake{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(400px 220px at 70% 25%, rgba(255,204,51,.28), transparent 60%),
+    radial-gradient(320px 220px at 25% 75%, rgba(96,165,250,.4), transparent 60%);
+}
+.hero-img-fake .label{
+  position:absolute;top:18px;left:18px;
+  background:rgba(255,255,255,.12);backdrop-filter:blur(6px);
+  border:1px dashed rgba(255,255,255,.4);
+  color:#fff;font-size:11px;font-weight:600;letter-spacing:.1em;
+  padding:6px 12px;border-radius:6px;
+}
+.hero-img-fake .scene{
+  position:absolute;left:30px;bottom:30px;color:#fff;
+  font-family:'Sora';font-weight:800;font-size:22px;line-height:1.2;max-width:240px;
+}
+.hero-img-fake .scene small{display:block;font-family:'Manrope';font-weight:500;font-size:13px;opacity:.85;margin-top:8px;letter-spacing:.02em}
+.hero-img-fake .device{position:absolute;background:#fff;border-radius:12px;box-shadow:0 14px 28px rgba(0,0,0,.3)}
+.hero-img-fake .tablet{top:60px;right:40px;width:200px;height:140px;background:linear-gradient(180deg,#fff,#eaf0fb)}
+.hero-img-fake .tablet::before{content:"eticonomia";position:absolute;top:10px;left:14px;font-family:'Sora';font-weight:800;color:var(--navy-deep);font-size:11px}
+.hero-img-fake .phone{bottom:60px;right:90px;width:80px;height:140px;border-radius:14px;background:linear-gradient(180deg,#fff,#dbe5f5)}
+.hero-img-fake .pos{bottom:90px;right:20px;width:54px;height:90px;background:#1e3a8a;border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,.4)}
+
+/* ============================================================
+   2) PROBLEMA / SOLUZIONE
+   ============================================================ */
+.ps{padding:50px 0 30px}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.ps-block{
+  background:var(--white);border-radius:22px;padding:26px;
+  box-shadow:var(--shadow-md);
+  position:relative;
+}
+.ps-block.solution{
+  background:linear-gradient(135deg,#fff8e6 0%,#fff3d4 100%);
+  border:1px solid rgba(245,180,0,.3);
+}
+.ps-block h3{font-size:22px;margin-bottom:20px;text-align:center}
+.ps-block.solution h3{color:var(--navy-deep)}
+.ps-block.solution h3 strong{color:var(--gold)}
+
+.ps-flow{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+.ps-step{
+  flex:1;background:var(--bg-1);border-radius:14px;
+  padding:14px 10px;text-align:center;font-weight:600;font-size:13px;
+  color:var(--navy-deep);line-height:1.3;min-height:90px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.ps-step .ico{display:block;font-size:24px;margin-bottom:4px}
+.ps-arrow{color:var(--navy-mid);font-weight:800;font-size:18px;flex:none}
+
+.ps-block.solution .ps-step{background:linear-gradient(135deg,var(--gold-soft),var(--gold-light));color:var(--navy-deep)}
+.ps-block.solution .ps-flow{flex-direction:column}
+.ps-block.solution .ps-step{width:100%;font-size:15px;padding:18px}
+
+/* ============================================================
+   3) COSA PUOI OFFRIRE — 5 SERVIZI
+   ============================================================ */
+.section-title{
+  text-align:center;font-size:clamp(26px,3.2vw,36px);
+  margin:50px 0 28px;
+  display:flex;align-items:center;justify-content:center;gap:16px;
+}
+.section-title::before,.section-title::after{
+  content:"";flex:0 0 50px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--navy-mid));
+}
+.section-title::after{background:linear-gradient(90deg,var(--navy-mid),transparent)}
+.section-title strong{color:var(--blue)}
+
+.services{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+}
+.svc{
+  background:var(--white);border-radius:18px;
+  padding:18px 12px 16px;text-align:center;
+  box-shadow:var(--shadow-sm);
+  border:1px solid rgba(30,58,138,.08);
+  transition:transform .25s ease,box-shadow .25s ease;
+  position:relative;
+}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.svc h4{font-size:14px;color:var(--navy-deep);margin-bottom:10px;line-height:1.25;font-weight:800}
+
+/* SERVICE IMAGE PLACEHOLDER */
+.svc-img{
+  height:90px;border-radius:12px;margin-bottom:10px;
+  background:linear-gradient(135deg,var(--bg-1),var(--bg-2));
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.svc-img .ic{font-size:38px;filter:drop-shadow(0 4px 8px rgba(30,58,138,.25))}
+.svc-tags{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.svc-tag{
+  font-size:10px;font-weight:700;
+  background:var(--bg-1);color:var(--navy-mid);
+  padding:3px 8px;border-radius:6px;
+}
+
+.bar-system{
+  margin:30px auto 0;display:flex;justify-content:center;
+}
+.bar-system-inner{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);
+  color:#fff;padding:14px 36px;border-radius:999px;
+  font-family:'Sora';font-weight:700;font-size:16px;
+  box-shadow:var(--shadow-md);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.bar-system-inner::before{content:"✦";color:var(--gold-light)}
+
+/* ============================================================
+   4) COSA CAMBIA — 3 step
+   ============================================================ */
+.change{padding:30px 0}
+.change-grid{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr;
+  gap:14px;align-items:stretch;margin-top:20px;
+}
+.change-card{
+  background:var(--white);border-radius:20px;
+  padding:18px;text-align:center;
+  box-shadow:var(--shadow-md);
+  position:relative;
+}
+.change-card .num{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy-deep);font-family:'Sora';font-weight:800;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 14px rgba(245,180,0,.5);
+  border:3px solid #fff;
+}
+.change-card.alt .num{
+  background:linear-gradient(135deg,var(--navy-mid),var(--blue));color:#fff;
+}
+.change-img{
+  height:140px;border-radius:14px;margin-bottom:12px;
+  background:linear-gradient(135deg,#dbe5f5,#eaf0fb);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.change-img .ic{font-size:60px;filter:drop-shadow(0 6px 12px rgba(30,58,138,.3))}
+.change-card h4{font-size:16px;color:var(--navy-deep);line-height:1.3}
+.change-card h4 strong{color:var(--blue)}
+.change-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;color:var(--gold);font-weight:800;
+}
+
+/* ============================================================
+   5) RISULTATO
+   ============================================================ */
+.result{
+  margin-top:50px;padding:60px 0;
+  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 50%,var(--navy-mid) 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.result::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(500px 300px at 80% 20%, rgba(245,180,0,.18), transparent 60%),
+    radial-gradient(450px 280px at 10% 80%, rgba(96,165,250,.25), transparent 60%);
+  pointer-events:none;
+}
+.result-inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.result-pill{
+  display:inline-block;background:rgba(255,255,255,.1);
+  color:var(--gold-light);font-weight:700;letter-spacing:.22em;font-size:12px;
+  padding:8px 22px;border-radius:999px;margin-bottom:18px;
+  border:1px solid rgba(255,255,255,.2);
+}
+.result h2{font-size:clamp(28px,4vw,46px);color:#fff;margin-bottom:18px}
+.result h2 .gold{color:var(--gold-light)}
+.result h2 .eq{color:var(--gold);margin:0 8px}
+.result p{color:rgba(255,255,255,.85);max-width:480px;font-size:17px;line-height:1.6}
+
+/* PHONE MOCKUP — placeholder per immagine app */
+.phone{
+  background:linear-gradient(180deg,#fff,#f0f5ff);
+  border-radius:32px;padding:18px;
+  box-shadow:0 30px 60px rgba(0,0,0,.45);
+  max-width:240px;margin:0 auto;color:var(--navy-deep);
+  border:8px solid #1a2444;
+}
+.phone-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.phone-top .b{display:flex;align-items:center;gap:6px;font-family:'Sora';font-weight:800;font-size:13px}
+.phone-top .b-mark{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--navy-mid),var(--blue))}
+.phone-bal{
+  background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;
+  border-radius:14px;padding:14px;margin-bottom:12px;
+}
+.phone-bal small{opacity:.75;font-size:11px;display:block;letter-spacing:.05em}
+.phone-bal .amt{font-family:'Sora';font-weight:800;font-size:24px;margin-top:4px;color:var(--gold-light)}
+.phone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.phone-tile{
+  aspect-ratio:1;border-radius:12px;
+  background:linear-gradient(135deg,var(--bg-1),var(--bg-2));
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  border:1px solid rgba(30,58,138,.08);
+}
+
+/* ============================================================
+   6) MARKETING AUTOMATION
+   ============================================================ */
+.marketing{
+  padding:70px 0 60px;
+  background:
+    radial-gradient(700px 400px at 90% 10%, rgba(96,165,250,.15), transparent 60%),
+    radial-gradient(600px 350px at 0% 90%, rgba(245,180,0,.10), transparent 60%),
+    linear-gradient(180deg,#eef3fb 0%,#e0e9f7 100%);
+  position:relative;overflow:hidden;
+}
+.mkt-head{text-align:center;max-width:680px;margin:0 auto 40px}
+.mkt-eyebrow{
+  display:inline-block;background:linear-gradient(135deg,var(--navy-mid),var(--blue));
+  color:#fff;font-weight:700;letter-spacing:.18em;font-size:12px;
+  padding:8px 22px;border-radius:999px;margin-bottom:18px;
+  box-shadow:var(--shadow-sm);
+}
+.mkt-head h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:14px}
+.mkt-head h2 strong{color:var(--blue)}
+.mkt-head h2 .gold-mark{
+  background:linear-gradient(180deg,transparent 65%,var(--gold-soft) 65%);padding:0 4px;
+}
+.mkt-head p{color:var(--ink-soft);font-size:17px;line-height:1.6}
+.mkt-head p strong{color:var(--navy-deep)}
+
+/* 4 CANALI MARKETING */
+.channels{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:40px;
+}
+.channel{
+  background:#fff;border-radius:20px;padding:24px 20px;
+  box-shadow:var(--shadow-md);
+  border:1px solid rgba(30,58,138,.08);
+  position:relative;overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.channel:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.channel::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light));
+}
+.channel.blue::before{background:linear-gradient(90deg,var(--navy-mid),var(--blue))}
+.channel-ico{
+  width:54px;height:54px;border-radius:14px;
+  background:linear-gradient(135deg,var(--navy-mid),var(--blue));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;
+  margin-bottom:14px;box-shadow:0 8px 18px rgba(30,58,138,.35);
+}
+.channel.gold .channel-ico{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-deep);box-shadow:0 8px 18px rgba(245,180,0,.45)}
+.channel h4{font-size:17px;margin-bottom:8px}
+.channel .desc{font-size:13px;color:var(--ink-soft);line-height:1.5;margin-bottom:14px}
+.channel .feats{list-style:none;display:flex;flex-direction:column;gap:6px}
+.channel .feats li{
+  font-size:12px;color:var(--navy-deep);font-weight:600;
+  padding-left:18px;position:relative;line-height:1.4;
+}
+.channel .feats li::before{
+  content:"";position:absolute;left:0;top:5px;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--green) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/7px no-repeat;
+}
+
+/* WORKFLOW AUTOMATIZZATO */
+.workflow{
+  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 60%,var(--navy-mid) 100%);
+  border-radius:24px;padding:40px 30px;color:#fff;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.workflow::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(400px 250px at 90% 20%, rgba(245,180,0,.18), transparent 60%),
+    radial-gradient(350px 200px at 0% 100%, rgba(96,165,250,.25), transparent 60%);
+  pointer-events:none;
+}
+.workflow-head{position:relative;text-align:center;margin-bottom:30px}
+.workflow-head h3{color:#fff;font-size:clamp(22px,2.6vw,30px);margin-bottom:8px}
+.workflow-head h3 .gold{color:var(--gold-light)}
+.workflow-head p{color:rgba(255,255,255,.78);font-size:15px;max-width:520px;margin:0 auto}
+
+.flow-steps{
+  position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch;
+}
+.flow-step{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;padding:16px 12px;text-align:center;
+  position:relative;
+}
+.flow-step .step-n{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy-deep);font-family:'Sora';font-weight:800;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 10px;box-shadow:0 4px 10px rgba(245,180,0,.5);
+}
+.flow-step .step-ic{font-size:30px;margin-bottom:8px}
+.flow-step h5{font-family:'Sora';color:#fff;font-size:13px;margin-bottom:4px;font-weight:700}
+.flow-step small{color:rgba(255,255,255,.7);font-size:11px;line-height:1.3;display:block}
+
+/* AUTOMAZIONI EXTRA */
+.auto-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;
+}
+.auto-card{
+  background:#fff;border-radius:16px;padding:20px;
+  box-shadow:var(--shadow-sm);
+  display:flex;align-items:flex-start;gap:14px;
+  border-left:4px solid var(--gold);
+  transition:transform .2s ease;
+}
+.auto-card:hover{transform:translateX(4px)}
+.auto-card.blue{border-left-color:var(--blue)}
+.auto-card .auto-ic{
+  flex:none;width:42px;height:42px;border-radius:10px;
+  background:var(--bg-1);color:var(--navy-mid);
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+.auto-card.blue .auto-ic{background:linear-gradient(135deg,var(--navy-mid),var(--blue));color:#fff}
+.auto-card.gold .auto-ic{background:linear-gradient(135deg,var(--gold-soft),var(--gold-light));color:var(--navy-deep)}
+.auto-card h5{font-size:15px;color:var(--navy-deep);margin-bottom:4px;font-weight:800}
+.auto-card p{font-size:13px;color:var(--ink-soft);line-height:1.45}
+
+/* STATS BAR */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  margin-top:40px;padding:30px;
+  background:#fff;border-radius:20px;box-shadow:var(--shadow-md);
+}
+.stat{text-align:center;border-right:1px solid rgba(30,58,138,.1)}
+.stat:last-child{border-right:none}
+.stat .num{
+  font-family:'Sora';font-weight:800;font-size:clamp(26px,3.2vw,38px);
+  background:linear-gradient(135deg,var(--blue),var(--navy-mid));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1;margin-bottom:6px;
+}
+.stat .lbl{font-size:13px;color:var(--ink-soft);font-weight:600}
+
+@media (max-width:900px){
+  .channels{grid-template-columns:repeat(2,1fr)}
+  .flow-steps{grid-template-columns:repeat(2,1fr)}
+  .auto-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr);gap:24px}
+  .stat{border-right:none;border-bottom:1px solid rgba(30,58,138,.1);padding-bottom:16px}
+  .stat:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
+}
+@media (max-width:480px){
+  .channels{grid-template-columns:1fr}
+  .flow-steps{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   7) FOOTER CTA
+   ============================================================ */
+.footer-cta{padding:60px 0 50px;text-align:center}
+.footer-cta h2{font-size:clamp(24px,3.2vw,34px);margin-bottom:8px}
+.footer-cta h2 strong{color:var(--blue)}
+.footer-cta .sub{color:var(--ink-soft);font-size:17px;margin:18px 0 26px;font-weight:500}
+.footer-cta .checks{justify-content:center;margin-top:30px}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:900px){
+  .hero-grid,.ps-grid,.result-inner{grid-template-columns:1fr}
+  .services{grid-template-columns:repeat(2,1fr)}
+  .change-grid{grid-template-columns:1fr}
+  .change-arrow{transform:rotate(90deg)}
+  .hero-img{height:300px}
+}
+@media (max-width:480px){
+  .services{grid-template-columns:1fr 1fr}
+  .ps-flow{flex-direction:column}
+  .ps-arrow{transform:rotate(90deg)}
+  .hero h1{font-size:32px}
+  .topbar{justify-content:center}
+}
+</style>
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {"countryDetection":false,"enableTcf":true,"enableUspr":true,"floatingPreferencesButtonDisplay":"bottom-right","perPurposeConsent":true,"siteId":2565931,"tcfPurposes":{"2":"consent_only","7":"consent_only","8":"consent_only","9":"consent_only","10":"consent_only"},"whitelabel":false,"cookiePolicyId":30015764,"lang":"it","banner":{"acceptButtonDisplay":true,"backgroundOverlay":true,"closeButtonRejects":true,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-bottom-right","rejectButtonDisplay":true}};
+</script>
+<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/2565931.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+</head>
+<body>
+
+<!-- ETICONOMIA STANDARD NAV -->
+<style>
+.eb-nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:14px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(16px);
+  box-shadow:0 2px 20px rgba(13,45,110,0.08);
+  font-family:'Nunito',sans-serif;
+}
+.eb-nav .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.eb-nav .nav-logo img{height:38px;}
+.eb-nav .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+.eb-nav .nav-links a{color:#334155;text-decoration:none;font-size:13px;font-weight:600;transition:color 0.3s;}
+.eb-nav .nav-links a:hover{color:#1a4db5;}
+.eb-nav .has-dropdown{position:relative;}
+.eb-nav .has-dropdown::after{content:'';position:absolute;top:100%;left:0;right:0;height:12px;}
+.eb-nav .dropdown-toggle{cursor:pointer;}
+.eb-nav .arrow-d{font-size:10px;margin-left:2px;}
+.eb-nav .dropdown-menu{
+  display:none;position:absolute;top:calc(100% + 0px);left:0;
+  background:#fff;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,0.12);
+  padding:10px 0;min-width:220px;list-style:none;z-index:210;
+  padding-top:8px;
+}
+.eb-nav .has-dropdown:hover .dropdown-menu{display:block;}
+.eb-nav .dropdown-menu a{display:block;padding:8px 18px;font-size:13px;color:#334155;white-space:nowrap;}
+.eb-nav .dropdown-menu a:hover{background:#f1f5ff;color:#1a4db5;}
+.eb-nav .nav-cta{display:flex;gap:10px;align-items:center;}
+.eb-nav .btn-outline-nav{
+  padding:8px 20px;border:1.5px solid #1a4db5;border-radius:8px;
+  font-size:13px;font-weight:700;color:#1a4db5;text-decoration:none;
+  transition:all 0.3s;font-family:'Nunito',sans-serif;
+}
+.eb-nav .btn-outline-nav:hover{background:#1a4db5;color:#fff;}
+.eb-nav .btn-blue-nav{
+  padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;
+  color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,#1a4db5,#3b82f6);
+  box-shadow:0 4px 14px rgba(26,77,181,0.3);
+  transition:all 0.3s;font-family:'Nunito',sans-serif;
+}
+.eb-nav .btn-blue-nav:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,77,181,0.4);}
+.eb-nav .hamburger{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:8px;z-index:201;
+}
+.eb-nav .hamburger span{width:24px;height:2.5px;background:#0f1d3d;border-radius:2px;transition:all 0.3s;display:block;}
+.eb-nav .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.eb-nav .hamburger.active span:nth-child(2){opacity:0;}
+.eb-nav .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.eb-mobile-nav{
+  display:none;position:fixed;inset:0;z-index:150;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:24px;
+  padding:80px 30px 40px;font-family:'Nunito',sans-serif;
+}
+.eb-mobile-nav.open{display:flex;}
+.eb-mobile-nav a{
+  font-size:18px;font-weight:700;color:#0f1d3d;text-decoration:none;
+  padding:10px 0;border-bottom:1px solid #e2e8f0;width:100%;text-align:center;
+}
+.eb-mobile-nav a:last-child{border-bottom:none;}
+.eb-mobile-nav .btn-blue-nav{
+  margin-top:16px;padding:14px 36px;font-size:14px;border-radius:10px;
+  border-bottom:none;color:#fff;
+  background:linear-gradient(135deg,#1a4db5,#3b82f6);
+  box-shadow:0 4px 14px rgba(26,77,181,0.3);
+}
+@media(max-width:1100px){
+  .eb-nav .hamburger{display:flex;}
+  .eb-nav{padding:14px 20px;}
+  .eb-nav .nav-links{display:none !important;}
+  .eb-nav .nav-cta{display:none !important;}
+}
+@media(max-width:768px){
+  .eb-nav{padding:12px 16px;}
+}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
+
+<nav class="eb-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="/assets/images/logo.png" alt="Eticonomia" style="height:38px;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="evoenergy.html">EvoEnergy</a></li>
+    <li class="has-dropdown">
+      <a href="#" class="dropdown-toggle">Gli Strumenti <span class="arrow-d">&#9662;</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="buoni-marketing.html">Talenti</a></li>
+        <li><a href="marketplace.html">Marketplace &amp; Buoni Spesa</a></li>
+        <li><a href="punti-community.html">Gettone</a></li>
+        <li><a href="punti-volume.html">Punti Volume</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="come-funziona.html" class="dropdown-toggle">Come Funziona <span class="arrow-d">&#9662;</span></a><ul class="dropdown-menu"><li><a href="vantaggi.html">Vantaggi</a></li><li><a href="card.html">Le Card</a></li></ul></li>
+    <li><a href="circuito.html">Circuito Aziende</a></li>
+    <li><a href="aziende.html">Servizi Aziende</a></li>
+    <li><a href="consulente.html">Consulente</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="https://office.evobrain.club" class="btn-outline-nav">Accedi</a>
+    <a href="card.html" class="btn-blue-nav">Entra nel Club</a>
+  </div>
+  <button class="hamburger" onclick="document.querySelector('.eb-mobile-nav').classList.toggle('open');this.classList.toggle('active')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="eb-mobile-nav">
+  <a href="index.html">Il Club</a><a href="evoenergy.html">EvoEnergy</a>
+  <a href="vantaggi.html">Vantaggi</a><a href="buoni-marketing.html">Talenti</a>
+  <a href="marketplace.html">Marketplace</a><a href="punti-community.html">Gettone</a>
+  <a href="punti-volume.html">Punti Volume</a><a href="card.html">Le Card</a>
+  <a href="come-funziona.html">Come Funziona</a><a href="circuito.html">Circuito Aziende</a>
+  <a href="aziende.html">Servizi Aziende</a><a href="consulente.html">Consulente</a>
+  <a href="card.html" class="btn-blue-nav">Entra nel Club</a>
+</div>
+<!-- END ETICONOMIA STANDARD NAV -->
+
+
+<!-- ============================================================
+     1) HERO
+     ============================================================ -->
+<section class="hero" style="padding-top:80px;">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        eticonomia
+      </div>
+      <span class="pill-free">INGRESSO GRATUITO</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1>Il tuo negozio diventa anche<br><span class="accent">un Punto Servizi</span></h1>
+        <p class="lead">
+          Con Eticonomia puoi offrire <strong>servizi utili ogni giorno</strong>
+          e <strong>aggiungere entrate dai servizi</strong>, oltre alla vendita
+        </p>
+
+        <a href="#attiva" class="cta">
+          Attiva gratuitamente la tua attività
+          <span class="arrow">→</span>
+        </a>
+
+        <div class="checks">
+          <div class="chk">Nessun costo iniziale</div>
+          <div class="chk">Entrate aggiuntive</div>
+          <div class="chk">Clienti più frequenti</div>
+        </div>
+      </div>
+
+      <!-- ============ HERO IMAGE ============
+           SOSTITUISCI tutto il blocco .hero-img con un'immagine AI:
+           <div class="hero-img"><img src="img/hero-negoziante.jpg" alt="Negoziante con tablet eticonomia"></div>
+           Prompt suggerito: "smiling Italian shopkeeper behind counter with tablet displaying eticonomia dashboard, modern shop interior with warm lighting, customers in background, professional photography, blue and gold accents"
+      -->
+      <div class="hero-img">
+        <div class="hero-img-fake">
+          <span class="label">⬇ IMG: NEGOZIANTE + TABLET</span>
+          <div class="device tablet"></div>
+          <div class="device phone"></div>
+          <div class="device pos"></div>
+          <div class="scene">
+            Il tuo punto vendita
+            <small>connesso · smart · sempre attivo</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     2) PROBLEMA / SOLUZIONE
+     ============================================================ -->
+<section class="ps">
+  <div class="wrap">
+    <div class="ps-grid">
+
+      <div class="ps-block">
+        <h3>Il <strong style="color:var(--blue)">problema</strong> di molti negozi</h3>
+        <div class="ps-flow">
+          <div class="ps-step">
+            <div>
+              <span class="ico">🚪</span>
+              Clienti entrano<br>solo per comprare
+            </div>
+          </div>
+          <span class="ps-arrow">→</span>
+          <div class="ps-step">
+            <div>
+              <span class="ico">🏪</span>
+              Negli altri giorni<br>il negozio è vuoto
+            </div>
+          </div>
+          <span class="ps-arrow">→</span>
+          <div class="ps-step">
+            <div>
+              <span class="ico">📉</span>
+              Nessun guadagno<br>ricorrente
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ps-block solution">
+        <h3>La soluzione con <strong>Eticonomia</strong></h3>
+        <div class="ps-flow">
+          <div class="ps-step">Offri servizi usati ogni giorno</div>
+          <div class="ps-step">Le visite diventano frequenti!</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3) COSA PUOI OFFRIRE
+     ============================================================ -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Cosa <strong>puoi</strong> offrire nel tuo negozio</h2>
+
+    <div class="services">
+
+      <div class="svc">
+        <!-- IMG: smartphone con loghi operatori telefonici -->
+        <div class="svc-img"><span class="ic">📱</span></div>
+        <h4>Ricariche<br>Telefoniche</h4>
+        <div class="svc-tags">
+          <span class="svc-tag">TIM</span>
+          <span class="svc-tag">VODAFONE</span>
+          <span class="svc-tag">ILIAD</span>
+        </div>
+      </div>
+
+      <div class="svc">
+        <!-- IMG: bollettini postali e mano con smartphone -->
+        <div class="svc-img"><span class="ic">📄</span></div>
+        <h4>Pagamento<br>Bollettini</h4>
+        <div class="svc-tags">
+          <span class="svc-tag">POSTALI</span>
+          <span class="svc-tag">F24</span>
+          <span class="svc-tag">MAV</span>
+        </div>
+      </div>
+
+      <div class="svc">
+        <!-- IMG: lampadina + goccia acqua + fiamma gas -->
+        <div class="svc-img"><span class="ic">💡</span></div>
+        <h4>Attivazione<br>Utenze</h4>
+        <div class="svc-tags">
+          <span class="svc-tag">LUCE</span>
+          <span class="svc-tag">GAS</span>
+          <span class="svc-tag">ACQUA</span>
+        </div>
+      </div>
+
+      <div class="svc">
+        <!-- IMG: gift card con fiocco -->
+        <div class="svc-img"><span class="ic">🎁</span></div>
+        <h4>Gift Card</h4>
+        <div class="svc-tags">
+          <span class="svc-tag">BUONI</span>
+          <span class="svc-tag">REGALO</span>
+        </div>
+      </div>
+
+      <div class="svc">
+        <!-- IMG: loghi SPID, PagoPA, ticket -->
+        <div class="svc-img"><span class="ic">🌐</span></div>
+        <h4>Servizi<br>Digitali</h4>
+        <div class="svc-tags">
+          <span class="svc-tag">SPID</span>
+          <span class="svc-tag">PAGOPA</span>
+          <span class="svc-tag">TICKET</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bar-system">
+      <div class="bar-system-inner">Tutto nello stesso sistema operativo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4) COSA CAMBIA
+     ============================================================ -->
+<section class="change">
+  <div class="wrap">
+    <h2 class="section-title">Cosa <strong>cambia</strong> per il tuo negozio</h2>
+
+    <div class="change-grid">
+
+      <div class="change-card">
+        <div class="num">1</div>
+        <!-- IMG: cliente che entra in negozio -->
+        <div class="change-img"><span class="ic">🛍️</span></div>
+        <h4>Il cliente entra<br>anche per i <strong>servizi</strong></h4>
+      </div>
+
+      <div class="change-arrow">→</div>
+
+      <div class="change-card alt">
+        <div class="num">2</div>
+        <!-- IMG: carrello pieno + smartphone -->
+        <div class="change-img"><span class="ic">🛒</span></div>
+        <h4>Più <strong>occasioni</strong><br>di <strong>vendita</strong></h4>
+      </div>
+
+      <div class="change-arrow">→</div>
+
+      <div class="change-card">
+        <div class="num">3</div>
+        <!-- IMG: monete e grafico in salita -->
+        <div class="change-img"><span class="ic">💰</span></div>
+        <h4>Entrate <strong>dai servizi</strong></h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5) RISULTATO
+     ============================================================ -->
+<section class="result">
+  <div class="wrap result-inner">
+    <div>
+      <span class="result-pill">RISULTATO</span>
+      <h2>Più <span class="gold">ingressi</span> <span class="eq">=</span> Più <span class="gold">opportunità</span></h2>
+      <p>Ogni servizio offerto diventa un'occasione per fidelizzare il cliente, aumentare le visite e generare ricavi continui giorno dopo giorno.</p>
+    </div>
+
+    <!-- PHONE MOCKUP — sostituibile con immagine AI dell'app -->
+    <div class="phone" aria-hidden="true">
+      <div class="phone-top">
+        <div class="b">
+          <span class="b-mark"></span>
+          eticonomia
+        </div>
+        <span style="font-size:18px">≡</span>
+      </div>
+      <div class="phone-bal">
+        <small>SALDO SETTIMANALE</small>
+        <div class="amt">€ 152,40</div>
+      </div>
+      <div class="phone-grid">
+        <div class="phone-tile">📱</div>
+        <div class="phone-tile">💡</div>
+        <div class="phone-tile">📄</div>
+        <div class="phone-tile">🎁</div>
+        <div class="phone-tile">🌐</div>
+        <div class="phone-tile">💳</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6) MARKETING AUTOMATION
+     ============================================================ -->
+<section class="marketing">
+  <div class="wrap">
+
+    <div class="mkt-head">
+      <span class="mkt-eyebrow">⚡ MARKETING AUTOMATIZZATO</span>
+      <h2>Tutti i tuoi clienti, <strong>sempre connessi</strong><br>al tuo <span class="gold-mark">negozio</span></h2>
+      <p>Eticonomia include un <strong>sistema completo di marketing automation</strong> che lavora per te 24/7: invia messaggi, fidelizza, riattiva clienti dormienti e fa crescere il tuo business in automatico.</p>
+    </div>
+
+    <!-- 4 CANALI -->
+    <div class="channels">
+
+      <div class="channel blue">
+        <div class="channel-ico">💬</div>
+        <h4>SMS Marketing</h4>
+        <p class="desc">Raggiungi i clienti direttamente sul telefono con messaggi mirati ad alto tasso di apertura.</p>
+        <ul class="feats">
+          <li>Promozioni flash</li>
+          <li>Reminder appuntamenti</li>
+          <li>Codici sconto personali</li>
+          <li>Compleanni automatici</li>
+        </ul>
+      </div>
+
+      <div class="channel gold">
+        <div class="channel-ico">📧</div>
+        <h4>Email Marketing</h4>
+        <p class="desc">Newsletter professionali e campagne automatizzate basate sul comportamento dei clienti.</p>
+        <ul class="feats">
+          <li>Newsletter periodiche</li>
+          <li>Sequenze di benvenuto</li>
+          <li>Recupero clienti inattivi</li>
+          <li>Offerte personalizzate</li>
+        </ul>
+      </div>
+
+      <div class="channel blue">
+        <div class="channel-ico">🔔</div>
+        <h4>Push Marketing</h4>
+        <p class="desc">Notifiche immediate sull'app e sul browser per offerte lampo e novità del negozio.</p>
+        <ul class="feats">
+          <li>Notifiche geolocalizzate</li>
+          <li>Offerte in tempo reale</li>
+          <li>Avvisi prodotti tornati</li>
+          <li>Eventi e novità</li>
+        </ul>
+      </div>
+
+      <div class="channel gold">
+        <div class="channel-ico">📱</div>
+        <h4>Social Strategy</h4>
+        <p class="desc">Pubblicazioni automatiche e contenuti professionali su tutti i tuoi social.</p>
+        <ul class="feats">
+          <li>Post auto su FB & IG</li>
+          <li>Calendario editoriale AI</li>
+          <li>Contenuti generati</li>
+          <li>WhatsApp Business</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- WORKFLOW VISUALE -->
+    <div class="workflow">
+      <div class="workflow-head">
+        <h3>Il <span class="gold">flusso automatico</span> che lavora per te</h3>
+        <p>Dal primo contatto alla fidelizzazione: ogni passaggio è gestito dal sistema, in modo intelligente e personalizzato.</p>
+      </div>
+
+      <div class="flow-steps">
+
+        <div class="flow-step">
+          <div class="step-n">1</div>
+          <div class="step-ic">👤</div>
+          <h5>Cliente entra</h5>
+          <small>Profilo creato in automatico</small>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-n">2</div>
+          <div class="step-ic">🎯</div>
+          <h5>Segmentazione AI</h5>
+          <small>Classificato per interessi</small>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-n">3</div>
+          <div class="step-ic">📤</div>
+          <h5>Campagna inviata</h5>
+          <small>SMS, email o push mirati</small>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-n">4</div>
+          <div class="step-ic">📊</div>
+          <h5>Analisi risposta</h5>
+          <small>Misuro chi apre e clicca</small>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-n">5</div>
+          <div class="step-ic">🔄</div>
+          <h5>Riattivazione</h5>
+          <small>Follow-up automatico</small>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AUTOMAZIONI EXTRA -->
+    <div class="auto-grid">
+
+      <div class="auto-card blue">
+        <div class="auto-ic">🎂</div>
+        <div>
+          <h5>Auguri di compleanno</h5>
+          <p>Coupon personalizzato inviato automaticamente nel giorno speciale del cliente.</p>
+        </div>
+      </div>
+
+      <div class="auto-card gold">
+        <div class="auto-ic">⏰</div>
+        <div>
+          <h5>Reminder scadenze</h5>
+          <p>Avvisi automatici per ricariche, abbonamenti e bollette in scadenza.</p>
+        </div>
+      </div>
+
+      <div class="auto-card blue">
+        <div class="auto-ic">🛒</div>
+        <div>
+          <h5>Recupero clienti dormienti</h5>
+          <p>Riattiva chi non viene da tempo con offerte studiate sul suo storico.</p>
+        </div>
+      </div>
+
+      <div class="auto-card gold">
+        <div class="auto-ic">⭐</div>
+        <div>
+          <h5>Programma fedeltà</h5>
+          <p>Punti, premi e livelli gestiti in automatico per ogni cliente registrato.</p>
+        </div>
+      </div>
+
+      <div class="auto-card blue">
+        <div class="auto-ic">🎟️</div>
+        <div>
+          <h5>Coupon intelligenti</h5>
+          <p>Sconti generati in base ai prodotti acquistati e ai gusti rilevati.</p>
+        </div>
+      </div>
+
+      <div class="auto-card gold">
+        <div class="auto-ic">🤖</div>
+        <div>
+          <h5>Assistente AI 24/7</h5>
+          <p>Chatbot che risponde ai clienti su WhatsApp e social a qualsiasi ora.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <div class="num">+45%</div>
+        <div class="lbl">Visite ripetute</div>
+      </div>
+      <div class="stat">
+        <div class="num">+30%</div>
+        <div class="lbl">Scontrino medio</div>
+      </div>
+      <div class="stat">
+        <div class="num">90%</div>
+        <div class="lbl">Apertura SMS</div>
+      </div>
+      <div class="stat">
+        <div class="num">24/7</div>
+        <div class="lbl">Sempre attivo</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     7) FOOTER CTA
+     ============================================================ -->
+<section class="footer-cta" id="attiva">
+  <div class="wrap">
+    <h2>Vuoi aumentare gli <strong>ingressi</strong> nel tuo <strong>negozio</strong>?</h2>
+
+    <a href="#" class="cta" style="margin-top:18px">
+      Attiva gratuitamente la tua attività
+      <span class="arrow">→</span>
+    </a>
+
+    <p class="sub">e inizia a offrire servizi subito!</p>
+
+    <div class="checks">
+      <div class="chk">Facile da usare</div>
+      <div class="chk">Servizi in più</div>
+      <div class="chk">Clienti fidelizzati</div>
+    </div>
+  </div>
+</section>
+
+
+<footer style="background:#0a1f4d;padding:30px 20px;text-align:center;">
+  <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:12px;">© 2026 ETICONOMIA SRL — P.IVA 12497251004 — Tutti i diritti riservati</div>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;">
+    <a href="https://www.iubenda.com/privacy-policy/30015764" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Privacy Policy" style="font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
+    <a href="termini.html" style="font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;">Termini e Condizioni</a>
+    <a href="https://www.iubenda.com/privacy-policy/30015764/cookie-policy" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Cookie Policy" style="font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;">Cookie Policy</a>
+  </div>
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+  <div style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.8;">
+    Eticonomia Srl — Via Santa Maria del Colle 1, 02038 Scandriglia (RI)<br>
+    <a href="mailto:info@eticonomia.com" style="color:rgba(255,255,255,0.45);text-decoration:none;">info@eticonomia.com</a> · <a href="https://wa.me/393926869831" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">WhatsApp</a>
+  </div>
+</footer>
+</body>
+</html>

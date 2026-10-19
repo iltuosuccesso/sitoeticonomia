@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <title>Termini e Condizioni — Eticonomia</title>
+<meta name="description" content="Termini e Condizioni di utilizzo del Club Eticonomia, dei Talenti, dei servizi e dei compensi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Sora:wght@600;700;800;900&display=swap">
+<link rel="stylesheet" href="responsive.css">
+<style>
+:root{
+  --blue:#1a4db5;--blue-light:#3b82f6;--blue-dark:#0f1d3d;
+  --gold:#e8a020;--gold-l:#f5c842;
+  --bg:#f8faff;--white:#ffffff;
+  --text:#334155;--text-m:#64748b;
+  --border:#e2e8f0;
+  --shadow:0 4px 24px rgba(13,45,110,0.06);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+h1,h2,h3{font-family:'Sora',sans-serif;color:var(--blue-dark);line-height:1.2;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:14px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(16px);
+  box-shadow:0 2px 20px rgba(13,45,110,0.08);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-links{display:flex;gap:30px;list-style:none;}
+.nav-links a{color:var(--text-m);text-decoration:none;font-size:13px;font-weight:600;transition:color 0.3s;}
+.nav-links a:hover{color:var(--blue);}
+.has-dropdown{position:relative;}
+.has-dropdown::after{content:'';position:absolute;top:100%;left:0;right:0;height:12px;}
+.dropdown-toggle{cursor:pointer;}
+.arrow-d{font-size:10px;margin-left:2px;}
+.dropdown-menu{
+  display:none;position:absolute;top:calc(100% + 0px);left:0;
+  background:#fff;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,0.12);
+  padding:10px 0;min-width:220px;list-style:none;z-index:210;padding-top:8px;
+}
+.has-dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:8px 18px;font-size:13px;color:var(--text);white-space:nowrap;}
+.dropdown-menu a:hover{background:#f1f5ff;color:var(--blue);}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn-outline-nav{padding:8px 20px;border:1.5px solid var(--blue);border-radius:8px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;transition:all 0.3s;}
+.btn-outline-nav:hover{background:var(--blue);color:#fff;}
+.btn-blue-nav{padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--blue),var(--blue-light));box-shadow:0 4px 14px rgba(26,77,181,0.3);transition:all 0.3s;}
+.btn-blue-nav:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,77,181,0.4);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;}
+.hamburger span{width:24px;height:2.5px;background:var(--blue-dark);border-radius:2px;transition:all 0.3s;display:block;}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-nav-overlay{
+  display:none;position:fixed;inset:0;z-index:150;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:24px;
+  padding:80px 30px 40px;
+}
+.mobile-nav-overlay.open{display:flex;}
+.mobile-nav-overlay a{font-size:18px;font-weight:700;color:var(--blue-dark);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);width:100%;text-align:center;}
+.mobile-nav-overlay a:last-child{border-bottom:none;}
+.mobile-nav-overlay .btn-blue-nav{margin-top:16px;padding:14px 36px;font-size:14px;border-radius:10px;border-bottom:none;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-light));box-shadow:0 4px 14px rgba(26,77,181,0.3);}
+
+/* CONTENT */
+.terms-wrap{max-width:820px;margin:0 auto;padding:120px 30px 60px;}
+.terms-wrap h1{font-size:clamp(28px,4vw,42px);margin-bottom:8px;}
+.terms-wrap .update{font-size:13px;color:var(--text-m);margin-bottom:40px;}
+.terms-wrap h2{font-size:20px;margin-top:36px;margin-bottom:12px;color:var(--blue);}
+.terms-wrap h3{font-size:16px;margin-top:20px;margin-bottom:8px;}
+.terms-wrap p,.terms-wrap li{font-size:14px;line-height:1.8;color:var(--text);margin-bottom:10px;}
+.terms-wrap ul{padding-left:20px;margin-bottom:16px;}
+.terms-wrap ul li{margin-bottom:6px;}
+.terms-wrap strong{color:var(--blue-dark);}
+
+/* FOOTER */
+footer{background:var(--blue-dark);padding:30px 20px;text-align:center;}
+.footer-legal{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:12px;}
+.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;}
+.footer-links a:hover{color:rgba(255,255,255,0.7);}
+</style>
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {"countryDetection":false,"enableTcf":true,"enableUspr":true,"floatingPreferencesButtonDisplay":"bottom-right","perPurposeConsent":true,"siteId":2565931,"tcfPurposes":{"2":"consent_only","7":"consent_only","8":"consent_only","9":"consent_only","10":"consent_only"},"whitelabel":false,"cookiePolicyId":30015764,"lang":"it","banner":{"acceptButtonDisplay":true,"backgroundOverlay":true,"closeButtonRejects":true,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-bottom-right","rejectButtonDisplay":true}};
+</script>
+<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/2565931.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="/assets/images/logo.png" alt="Eticonomia" style="height:38px;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="evoenergy.html">EvoEnergy</a></li>
+    <li class="has-dropdown">
+      <a href="#" class="dropdown-toggle">Gli Strumenti <span class="arrow-d">&#9662;</span></a>
+      <ul class="dropdown-menu">
+        <li><a href="buoni-marketing.html">Talenti</a></li>
+        <li><a href="marketplace.html">Marketplace &amp; Buoni Spesa</a></li>
+        <li><a href="punti-community.html">Gettone</a></li>
+        <li><a href="punti-volume.html">Punti Volume</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="come-funziona.html" class="dropdown-toggle">Come Funziona <span class="arrow-d">&#9662;</span></a><ul class="dropdown-menu"><li><a href="vantaggi.html">Vantaggi</a></li><li><a href="card.html">Le Card</a></li></ul></li>
+    <li><a href="circuito.html">Circuito Aziende</a></li>
+    <li><a href="aziende.html">Servizi Aziende</a></li>
+    <li><a href="consulente.html">Consulente</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="https://office.evobrain.club" class="btn-outline-nav">Accedi</a>
+    <a href="card.html" class="btn-blue-nav">Entra nel Club</a>
+  </div>
+  <button class="hamburger" onclick="document.querySelector('.mobile-nav-overlay').classList.toggle('open');this.classList.toggle('active')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav-overlay"><a href="index.html">Il Club</a><a href="evoenergy.html">EvoEnergy</a><a href="vantaggi.html">Vantaggi</a><a href="buoni-marketing.html">Talenti</a><a href="marketplace.html">Marketplace</a><a href="punti-community.html">Gettone</a><a href="punti-volume.html">Punti Volume</a><a href="card.html">Le Card</a><a href="come-funziona.html">Come Funziona</a><a href="circuito.html">Circuito Aziende</a><a href="aziende.html">Servizi Aziende</a><a href="consulente.html">Consulente</a><a href="card.html" class="btn-blue-nav">Entra nel Club</a></div>
+
+<!-- CONTENUTO -->
+<div class="terms-wrap">
+  <h1>Termini e Condizioni</h1>
+  <p class="update">Ultimo aggiornamento: 19 ottobre 2026</p>
+
+  <h2>1. Definizioni</h2>
+  <p>I presenti Termini e Condizioni (di seguito "Termini") regolano l'accesso e l'utilizzo dei servizi offerti da <strong>Eticonomia Srl</strong> (di seguito "Eticonomia" o "la Societa'"), con sede legale in Via Santa Maria del Colle 1, 02038 Scandriglia (RI), P.IVA 08442680727, attraverso il sito web evobrain.club e l'applicazione mobile Eticonomia (di seguito "Piattaforma").</p>
+  <ul>
+    <li><strong>Club Eticonomia</strong>: la community riservata agli iscritti alla Piattaforma.</li>
+    <li><strong>Membro</strong>: qualsiasi persona fisica o giuridica che si iscrive al Club Eticonomia.</li>
+    <li><strong>Card</strong>: la tessera virtuale associata al Membro (Talent ID o Talent ID Plus).</li>
+    <li><strong>Talenti</strong>: il cashback del Club, riconosciuto sugli acquisti pagati interamente in EVO e per ogni contratto attivato. Si usano per pagare meno all'interno del circuito Eticonomia; non sono euro e non sono convertibili in denaro.</li>
+    <li><strong>Buoni Spesa (EVO)</strong>: buoni multilaterali con cui si paga nel circuito, utilizzabili presso i merchant del circuito e nel marketplace.</li>
+    <li><strong>Gettone</strong>: l'importo di 9 € che Eticonomia riconosce per ogni bolletta pagata di un contratto Evoenergy; tolto il 10%, il resto (8,10 €) si divide in compensi sui cerchi (1° cerchio: le persone invitate dal Membro; 2° cerchio: quelle invitate da loro; 3° cerchio: il giro successivo).</li>
+    <li><strong>Punti Volume</strong>: il valore di una pratica o di un acquisto (contratti del comparatore, prodotti), su cui si calcola un compenso una tantum.</li>
+    <li><strong>Circuito</strong>: la rete di aziende ed esercenti convenzionati che accettano i Buoni e i servizi Eticonomia.</li>
+    <li><strong>Consulente</strong>: Membro che promuove il Club con continuita', sulla base di una lettera d'incarico.</li>
+  </ul>
+
+  <h2>2. Iscrizione al Club</h2>
+  <p>L'iscrizione al Club Eticonomia avviene tramite la Piattaforma ed e' subordinata all'accettazione dei presenti Termini. L'iscrizione puo' avvenire:</p>
+  <ul>
+    <li>Su invito di un Membro esistente.</li>
+    <li>Tramite attivazione autonoma di una Card attraverso l'app Eticonomia o il sito.</li>
+  </ul>
+  <p>Il Membro si impegna a fornire dati veritieri, completi e aggiornati. Eticonomia si riserva il diritto di sospendere o cancellare l'account in caso di informazioni false o incomplete.</p>
+
+  <h2>3. Le Card</h2>
+  <h3>3.1 Tipologie</h3>
+  <ul>
+    <li><strong>Talent ID (15 € all'anno)</strong>: consente l'accesso al Club, con 50 Talenti di benvenuto, cashback del 10% in Talenti sugli acquisti pagati interamente in EVO e compensi del 25% sul 1° cerchio. E' gratuito: si attiva automaticamente con il primo contratto attivato.</li>
+    <li><strong>Talent ID Plus (120 € all'anno)</strong>: consente l'accesso completo al Club, con 200 Talenti di benvenuto, cashback del 30% in Talenti sugli acquisti pagati interamente in EVO, 10 Talent ID da regalare e compensi del 45%, 10% e 10% sui tre cerchi. E' previsto un solo prezzo annuale, senza formula mensile. Se il Membro ha il Talent ID Plus, vale sempre il Plus.</li>
+  </ul>
+  <h3>3.2 Durata e rinnovo</h3>
+  <p>Il Talent ID e il Talent ID Plus si acquistano una volta e, alla scadenza, si rinnovano. Chi ha il Talent ID Plus non acquista il Talent ID.</p>
+
+  <h2>4. Talenti</h2>
+  <ul>
+    <li>I Talenti sono il cashback del Club e <strong>non sono euro</strong>.</li>
+    <li>Si ricevono: 50 Talenti per ogni contratto attivato (luce, gas, fibra, telefonia); il 10% (Talent ID) o il 30% (Talent ID Plus) sugli acquisti pagati interamente in EVO. Se nello stesso acquisto si usano anche Talenti, il cashback non spetta. Si usano per pagare meno all'interno del circuito Eticonomia (marketplace, merchant convenzionati, catalogo gift).</li>
+    <li>Non sono convertibili in denaro, non sono cedibili a terzi e non sono rimborsabili.</li>
+    <li>Eticonomia si riserva il diritto di modificare le condizioni di erogazione e utilizzo dei Talenti con preavviso di 30 giorni.</li>
+  </ul>
+
+  <h2>5. Buoni Spesa (EVO)</h2>
+  <ul>
+    <li>I Buoni Spesa EVO sono buoni multilaterali con cui si paga nel circuito.</li>
+    <li>Sono utilizzabili presso i merchant del circuito e nel marketplace Eticonomia.</li>
+    <li>I Buoni EVO <strong>non sono Euro</strong> e non sono convertibili in denaro contante.</li>
+    <li>I Talenti <strong>non sono convertibili in EVO ne' in Euro</strong>.</li>
+  </ul>
+
+  <h2>6. Gettone e compensi sulle bollette</h2>
+  <ul>
+    <li>Per ogni bolletta pagata di un contratto Evoenergy (Evobrain luce e gas) Eticonomia riconosce un gettone di 9 €. Tolto il 10%, il resto (8,10 €) si divide in compensi sui cerchi.</li>
+    <li>Il compenso e' riconosciuto ogni mese su ogni bolletta pagata: 25% sul 1° cerchio per il Talent ID; 45%, 10% e 10% sui tre cerchi per il Talent ID Plus. Fanno fede le bollette comunicate dal fornitore, storni compresi.</li>
+    <li>I compensi derivano solo da servizi e bollette pagate, mai dalle iscrizioni. L'eventuale riduzione della bolletta grazie ai compensi e' una stima, non una promessa.</li>
+  </ul>
+
+  <h2>7. Punti Volume</h2>
+  <ul>
+    <li>I Punti Volume esprimono il valore di una pratica o di un acquisto (contratti del comparatore, prodotti).</li>
+    <li>Sui Punti Volume si calcola un compenso una tantum, riconosciuto una sola volta.</li>
+    <li>Le condizioni di maturazione e utilizzo sono dettagliate nell'area riservata della Piattaforma.</li>
+  </ul>
+
+  <h2>8. Regole di pagamento misto</h2>
+  <p>Presso i merchant del circuito e' possibile effettuare pagamenti con un mix di strumenti:</p>
+  <ul>
+    <li>Talenti: nella percentuale stabilita dall'esercente.</li>
+    <li>Punti: fino al 75% del totale.</li>
+    <li>Talenti + Punti: insieme non possono superare il 95% del totale.</li>
+    <li>Il restante 5% minimo deve essere corrisposto in EVO o Euro.</li>
+  </ul>
+
+  <h2>9. EvoEnergy</h2>
+  <p>Il servizio EvoEnergy consente ai Membri di attivare contratti di fornitura energetica (luce, gas, fibra) tramite il circuito Eticonomia. I contratti sono gestiti da operatori partner. Eticonomia agisce come intermediario e non e' fornitore diretto di energia. Le condizioni contrattuali della fornitura sono regolate dal contratto stipulato tra il Membro e l'operatore partner.</p>
+
+  <h2>10. Circuito Aziende e Merchant</h2>
+  <p>Le aziende e gli esercenti che aderiscono al Circuito Eticonomia (merchant) accettano EVO e Talenti come strumento di pagamento parziale presso i propri punti vendita. L'adesione al Circuito e' gratuita e regolata da apposito accordo tra l'esercente e Eticonomia.</p>
+
+  <h2>11. Attivita' di Consulenza</h2>
+  <p>I Consulenti Eticonomia promuovono il Club con continuita', sulla base di una lettera d'incarico. Si diventa Consulente firmando la lettera d'incarico e facendo verificare i documenti; non e' prevista alcuna licenza o card a pagamento e il Talent ID Plus e' consigliato ma non obbligatorio. L'attivita' e' vendita diretta ai sensi della Legge 173/2005: il Consulente e' un incaricato munito di tesserino e i compensi derivano dai servizi pagati dai clienti, mai dalle iscrizioni. Il rapporto tra il Consulente e Eticonomia non configura un rapporto di lavoro subordinato. Le condizioni di compenso sono disciplinate dal piano compensi disponibile nell'area riservata.</p>
+
+  <h2>12. Marketplace</h2>
+  <p>Il Marketplace Eticonomia consente ai Membri di acquistare prodotti e servizi utilizzando Buoni EVO, Talenti o pagamento diretto. I prodotti sono forniti da Eticonomia o da partner terzi. In caso di prodotti di terzi, le garanzie e i resi sono regolati dalle condizioni del fornitore.</p>
+
+  <h2>13. Limitazioni di responsabilita'</h2>
+  <ul>
+    <li>Eticonomia non garantisce la disponibilita' continuativa e ininterrotta della Piattaforma.</li>
+    <li>Eticonomia non e' responsabile per danni derivanti dall'uso improprio dei servizi da parte del Membro.</li>
+    <li>Eticonomia si riserva il diritto di sospendere l'accesso ai servizi in caso di utilizzo fraudolento o in violazione dei presenti Termini.</li>
+  </ul>
+
+  <h2>14. Modifiche ai Termini</h2>
+  <p>Eticonomia si riserva il diritto di modificare i presenti Termini in qualsiasi momento. Le modifiche saranno comunicate tramite la Piattaforma e/o via email con un preavviso di almeno 15 giorni. L'utilizzo continuato dei servizi dopo la comunicazione delle modifiche costituisce accettazione delle stesse.</p>
+
+  <h2>15. Recesso e chiusura account</h2>
+  <p>Il Membro puo' recedere in qualsiasi momento chiudendo il proprio account dalla Piattaforma o contattando l'assistenza. Alla chiusura dell'account:</p>
+  <ul>
+    <li>I Talenti non utilizzati decadono.</li>
+    <li>I Buoni EVO non utilizzati decadono.</li>
+    <li>Nessun rimborso e' dovuto per servizi gia' erogati.</li>
+  </ul>
+
+  <h2>16. Legge applicabile e foro competente</h2>
+  <p>I presenti Termini sono regolati dalla legge italiana. Per ogni controversia derivante dall'interpretazione o dall'esecuzione dei presenti Termini sara' competente il Foro di Potenza, salvo quanto previsto dal Codice del Consumo a tutela del consumatore.</p>
+
+  <h2>17. Contatti</h2>
+  <p>Per qualsiasi richiesta relativa ai presenti Termini:</p>
+  <ul>
+    <li><strong>Email</strong>: <a href="mailto:info@eticonomia.com" style="color:var(--blue);">info@eticonomia.com</a></li>
+    <li><strong>Telefono</strong>: <a href="https://wa.me/393926869831" target="_blank" style="color:var(--blue);">WhatsApp 392 686 9831</a></li>
+    <li><strong>Sede</strong>: Eticonomia Srl — Via Santa Maria del Colle 1, 02038 Scandriglia (RI)</li>
+  </ul>
+</div>
+
+<footer>
+  <div class="footer-legal">&copy; 2026 ETICONOMIA SRL — P.IVA 12497251004 — Tutti i diritti riservati</div>
+  <div class="footer-links">
+    <a href="https://www.iubenda.com/privacy-policy/30015764" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+    <a href="termini.html">Termini e Condizioni</a>
+    <a href="https://www.iubenda.com/privacy-policy/30015764/cookie-policy" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Cookie Policy">Cookie Policy</a>
+  </div>
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+  <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.4);line-height:1.8;">
+    Eticonomia Srl — Via Santa Maria del Colle 1, 02038 Scandriglia (RI)<br>
+    <a href="mailto:info@eticonomia.com" style="color:rgba(255,255,255,0.45);text-decoration:none;">info@eticonomia.com</a> &middot; <a href="https://wa.me/393926869831" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">WhatsApp</a>
+  </div>
+</footer>
+
+</body>
+</html>

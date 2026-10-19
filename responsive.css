@@ -1,0 +1,232 @@
+/* ── DROPDOWN FIX ── */
+.has-dropdown{position:relative;}
+.has-dropdown::after{
+  content:'';position:absolute;top:100%;left:0;right:0;height:12px;
+}
+.dropdown-menu{
+  top:calc(100% + 0px) !important;
+  padding-top:8px !important;
+}
+
+/* ── HAMBURGER MENU ── */
+.hamburger{
+  display:none;
+  flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:8px;z-index:201;
+}
+.hamburger span{
+  width:24px;height:2.5px;background:var(--blue-dark);border-radius:2px;
+  transition:all 0.3s;display:block;
+}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+/* ── MOBILE OVERLAY NAV ── */
+.mobile-nav-overlay{
+  display:none;position:fixed;inset:0;z-index:150;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:24px;
+  padding:80px 30px 40px;
+}
+.mobile-nav-overlay.open{display:flex;}
+.mobile-nav-overlay a{
+  font-family:'Nunito',sans-serif;font-size:18px;font-weight:700;
+  color:var(--blue-dark);text-decoration:none;padding:10px 0;
+  border-bottom:1px solid var(--border);width:100%;text-align:center;
+}
+.mobile-nav-overlay a:last-child{border-bottom:none;}
+.mobile-nav-overlay .btn-blue-nav{
+  margin-top:16px;padding:14px 36px;font-size:14px;border-radius:10px;
+  border-bottom:none;color:var(--white);
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  box-shadow:0 4px 14px rgba(26,77,181,0.3);
+}
+
+/* ══════════════════════════════════════════
+   TABLET  ≤ 1100px
+   ══════════════════════════════════════════ */
+@media(max-width:1100px){
+  .hamburger{display:flex;}
+  nav{padding:14px 20px;}
+  .nav-links{display:none !important;}
+  .nav-cta{display:none !important;}
+
+  .hero{padding:90px 20px 60px;}
+  .hero-inner{grid-template-columns:1fr !important;}
+  .hero-right{display:none !important;}
+
+  .page-hero{padding:100px 20px 50px;min-height:auto;}
+
+  .stats-bar{grid-template-columns:repeat(2,1fr);padding:20px;}
+  .stat-item:nth-child(2){border-right:none;}
+
+  .sec-full{padding:56px 20px;}
+  .club-pillars{grid-template-columns:repeat(2,1fr) !important;}
+  .bolletta-wrap{grid-template-columns:1fr !important;}
+  .vantaggi-grid{grid-template-columns:1fr !important;}
+  .cards-grid{grid-template-columns:1fr !important;}
+  .steps-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  .footer-grid{grid-template-columns:1fr 1fr !important;gap:24px !important;}
+  .cta-section{padding:56px 20px;}
+  .cta-band{padding:56px 20px;}
+  footer{padding:32px 20px;}
+}
+
+/* ══════════════════════════════════════════
+   MOBILE  ≤ 768px
+   ══════════════════════════════════════════ */
+@media(max-width:768px){
+  /* NAV */
+  nav{padding:12px 16px;}
+
+  /* HERO INDEX */
+  .hero{padding:80px 16px 50px;min-height:auto;}
+  .hero-title{font-size:clamp(36px,10vw,52px) !important;}
+  .hero-claim{font-size:clamp(22px,6vw,32px) !important;margin-bottom:20px;}
+  .hero-sub{font-size:14px;margin-bottom:24px;}
+  .hero-benefits{gap:8px;}
+  .hb-item{padding:10px 14px;}
+  .hb-text{font-size:13px;}
+  .hero-btns{flex-direction:column;gap:10px;}
+  .hero-btns a,.btn-hero-gold,.btn-hero-white{width:100%;text-align:center;justify-content:center;}
+
+  /* PAGE HERO (sottopagine) */
+  .page-hero{padding:90px 16px 40px;min-height:auto;}
+  .page-hero-title{font-size:clamp(28px,8vw,42px) !important;}
+  .page-hero-sub{font-size:15px;}
+
+  /* STATS */
+  .stats-bar{grid-template-columns:1fr 1fr;padding:16px;gap:12px;}
+  .stat-n{font-size:28px;}
+  .stat-l{font-size:10px;}
+  .stat-item{padding:8px 4px;border-right:none !important;}
+
+  /* SECTIONS */
+  .sec-full{padding:40px 16px;}
+  .sec-title{font-size:clamp(24px,6vw,32px) !important;}
+  .sec-sub{font-size:14px;margin-bottom:32px;}
+  .inner{padding:0;}
+
+  /* PILLARS / GRIDS → 1 colonna */
+  .club-pillars{grid-template-columns:1fr !important;gap:14px !important;}
+  .vantaggi-grid{grid-template-columns:1fr !important;gap:14px !important;}
+  .cards-grid{grid-template-columns:1fr !important;gap:16px !important;}
+  .steps-grid{grid-template-columns:1fr !important;gap:14px !important;}
+  .club-stats-row{grid-template-columns:1fr !important;gap:10px;}
+
+  /* BOLLETTA */
+  .bolletta-wrap{grid-template-columns:1fr !important;gap:24px !important;}
+  .bolletta-visual{padding:24px;border-radius:16px;}
+  .bv-compare{grid-template-columns:1fr !important;gap:10px;}
+
+  /* CARDS */
+  .ev-card{max-width:100%;}
+  .card-top{height:130px;}
+  .card-body-ev{padding:18px;}
+  .promo-banner{flex-direction:column;text-align:center;gap:10px;padding:16px;}
+
+  /* CTA */
+  .cta-section{padding:48px 16px;}
+  .cta-title{font-size:clamp(26px,6vw,38px) !important;}
+  .cta-sub{font-size:14px;}
+  .cta-btns{flex-direction:column;gap:10px;}
+  .cta-btns a{width:100%;text-align:center;}
+  .cta-band{padding:48px 16px;}
+  .cta-band h2{font-size:clamp(22px,5vw,32px) !important;}
+
+  /* FOOTER */
+  footer{padding:24px 16px;flex-direction:column;text-align:center;}
+  .footer-grid{grid-template-columns:1fr !important;gap:20px !important;text-align:center;}
+  .footer-bottom{flex-direction:column;text-align:center;gap:12px;}
+  .footer-links{justify-content:center;flex-wrap:wrap;}
+  .foot-links{justify-content:center;}
+
+  /* ── INLINE STYLE OVERRIDES ── */
+  /* Grid/flex layouts nei style="" inline delle sottopagine */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns:repeat(2"],
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(4"]{
+    grid-template-columns:1fr !important;
+  }
+
+  [style*="display:flex"][style*="gap:60px"],
+  [style*="display:flex"][style*="gap:48px"],
+  [style*="display:flex"][style*="gap:40px"],
+  [style*="display: flex"][style*="gap: 60px"],
+  [style*="display: flex"][style*="gap: 48px"],
+  [style*="display: flex"][style*="gap: 40px"]{
+    flex-direction:column !important;
+  }
+
+  [style*="padding:80px"],
+  [style*="padding: 80px"]{
+    padding:40px 16px !important;
+  }
+
+  [style*="padding:72px"],
+  [style*="padding: 72px"]{
+    padding:40px 16px !important;
+  }
+
+  /* Font size overrides per inline */
+  [style*="font-size:48px"],
+  [style*="font-size: 48px"]{font-size:32px !important;}
+  [style*="font-size:44px"],
+  [style*="font-size: 44px"]{font-size:30px !important;}
+  [style*="font-size:42px"],
+  [style*="font-size: 42px"]{font-size:28px !important;}
+  [style*="font-size:38px"],
+  [style*="font-size: 38px"]{font-size:26px !important;}
+  [style*="font-size:36px"],
+  [style*="font-size: 36px"]{font-size:24px !important;}
+
+  /* Immagini e visual inline */
+  [style*="width:500px"],
+  [style*="width: 500px"],
+  [style*="width:480px"],
+  [style*="width: 480px"],
+  [style*="width:450px"],
+  [style*="width: 450px"],
+  [style*="width:400px"],
+  [style*="width: 400px"]{
+    width:100% !important;max-width:100% !important;
+  }
+
+  img{max-width:100%;height:auto;}
+}
+
+/* ══════════════════════════════════════════
+   SMALL MOBILE  ≤ 480px
+   ══════════════════════════════════════════ */
+@media(max-width:480px){
+  .hero{padding:75px 12px 40px;}
+  .hero-title{font-size:32px !important;}
+  .hero-claim{font-size:20px !important;}
+  .hero-pretitle{font-size:10px;padding:5px 12px;}
+
+  .page-hero{padding:80px 12px 32px;}
+  .page-hero-title{font-size:26px !important;}
+
+  .sec-full{padding:32px 12px;}
+  .sec-title{font-size:22px !important;}
+
+  .stats-bar{grid-template-columns:1fr;padding:12px;}
+  .stat-item{padding:10px 0;border-bottom:1px solid var(--border);}
+  .stat-item:last-child{border-bottom:none;}
+
+  .pillar{padding:20px 16px;}
+  .pillar-emoji{font-size:36px;}
+
+  .bolletta-visual{padding:18px;}
+
+  .cta-title{font-size:24px !important;}
+
+  footer{padding:20px 12px;}
+}
