@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{titolo}}</title>
+    <meta name="description" content="{{descrizione}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{indirizzo}}">
+    <meta property="og:title" content="{{titolo}}">
+    <meta property="og:description" content="{{descrizione}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{indirizzo}}">
+    <meta property="og:site_name" content="Eticonomia">
+    <meta property="og:image" content="https://eticonomia.com/assets/img/sfera.webp">
+    <meta name="theme-color" content="#0d1d17">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/sito.css">
+</head>
+
+<body class="body-color" style="--pagina: {{colore}};">
+
+    <button id="back-top" class="back-to-top" aria-label="Torna su">
+        <i class="fa-regular fa-arrow-up"></i>
+    </button>
+
+    <!-- Pannello laterale (telefono e tablet) -->
+    <div class="fix-area">
+        <div class="offcanvas__info">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo">
+                            <a href="index.html"><img src="assets/img/logo.png" alt="Eticonomia"></a>
+                        </div>
+                        <div class="offcanvas__close">
+                            <button aria-label="Chiudi il menu"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="mobile-menu fix mb-3"></div>
+                    <div class="offcanvas__contact">
+                        <h4>Contatti</h4>
+                        <ul>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="far fa-envelope"></i></div>
+                                <div class="offcanvas__contact-text"><a href="mailto:info@eticonomia.com">info@eticonomia.com</a></div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="far fa-map-marker-alt"></i></div>
+                                <div class="offcanvas__contact-text">Scandriglia (RI)</div>
+                            </li>
+                        </ul>
+                        <div class="header-button mt-4 text-center">
+                            <a href="contatti.html#scrivici" class="theme-btn">Scrivici <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas__overlay"></div>
+
+    <!-- Testata -->
+    <header class="header-1" id="header-sticky">
+        <div class="container-fluid">
+            <div class="mega-menu-wrapper">
+                <div class="header-main">
+                    <div class="logo">
+                        <a href="index.html" class="header-logo"><img src="assets/img/logo.png" alt="Eticonomia"></a>
+                    </div>
+                    <div class="mean__menu-wrapper">
+                        <div class="main-menu">
+                            <nav id="mobile-menu" aria-label="Menu principale">
+                                <ul>
+                                    {{menu}}
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="header-right d-flex justify-content-end align-items-center">
+                        <div class="header__hamburger d-xl-none my-auto">
+                            <div class="sidebar__toggle" role="button" aria-label="Apri il menu"><i class="fas fa-bars"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>

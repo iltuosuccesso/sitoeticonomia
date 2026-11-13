@@ -1,7 +1,36 @@
+# eticonomia.com — regole del server (Apache su Plesk)
 Options -Multiviews
-RewriteEngine On
 AddDefaultCharset utf-8
+RewriteEngine On
+RewriteRule ^faq/?$ /contatti.html [R=301,L]
 
-# Sito pubblico di Eticonomia srl (copia del sito evobrain.club con logo e dati aziendali di
-# Eticonomia, 19/10/2026). Accesso e area membri: app.eticonomia.com (backoffice di Eticonomia).
-RewriteRule ^faq/?$ /faq.html [R=301,L]
+# Le pagine del vecchio sito (copia di evobrain.club, fino a novembre 2026)
+# portano alla sezione più vicina del sito nuovo, così i link già in giro non si rompono.
+Redirect 301 /circuito.html /pratica.html#circuito
+Redirect 301 /aziende.html /pratica.html#circuito
+Redirect 301 /marketplace.html /pratica.html#circuito
+Redirect 301 /card.html /pratica.html#talento
+Redirect 301 /evo.html /pratica.html#talento
+Redirect 301 /punti-community.html /pratica.html#talento
+Redirect 301 /punti-volume.html /pratica.html#talento
+Redirect 301 /buoni-marketing.html /pratica.html#talento
+Redirect 301 /vantaggi.html /pratica.html#possibilita
+Redirect 301 /come-funziona.html /pratica.html
+Redirect 301 /evoenergy.html /pratica.html
+Redirect 301 /consulente.html /formazione.html#faber
+Redirect 301 /faq.html /contatti.html
+Redirect 301 /termini.html /privacy.html
+
+# Sorgenti e strumenti di costruzione: servono in git, non ai visitatori.
+RedirectMatch 404 ^/(pagine|strumenti)(/|$)
+RedirectMatch 404 ^/(README\.md|\.git.*)$
+
+ErrorDocument 404 /index.html
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+</IfModule>

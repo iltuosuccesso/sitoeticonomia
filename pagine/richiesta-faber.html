@@ -1,0 +1,70 @@
+<!--
+titolo: Richiesta informazioni sul percorso Faber
+descrizione: Chiedi di essere ricontattato per ricevere informazioni sul percorso Faber di Accademia Faber.
+colore: #FF94C8
+-->
+        <section class="apertura">
+            <div class="container">
+                <span class="numero">Formazione · Percorso Faber</span>
+                <h1>Richiedi informazioni sul percorso Faber.</h1>
+                <p class="sottotitolo">Lascia i tuoi recapiti: ti ricontatteremo per presentarti il percorso di Accademia Faber e le modalità per intraprenderlo attraverso Talentya.</p>
+                <nav class="briciole" aria-label="Percorso"><a href="index.html">Home</a> / <a href="formazione.html">Formazione</a> / <span>Percorso Faber</span></nav>
+            </div>
+        </section>
+
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-4">
+                        <div class="section-title">
+                            <span class="etichetta">Accademia Faber</span>
+                            <h2>Un percorso di cinque anni, livelli L1–L15.</h2>
+                        </div>
+                        <div class="testo">
+                            <p>Il Faber è il costruttore di relazioni di valore: una figura professionale dedicata all'ecosistema Talentya.</p>
+                            <a href="formazione.html#faber" class="collegamento">Leggi la presentazione del percorso <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="modulo">
+                            <form action="contatti.php" method="post">
+                                <input type="hidden" name="argomento" value="Percorso Faber">
+                                <input type="hidden" name="oggetto" value="Richiesta informazioni sul percorso Faber">
+                                <div class="trappola" aria-hidden="true">
+                                    <label for="sito_web">Non compilare questo campo</label>
+                                    <input type="text" id="sito_web" name="sito_web" tabindex="-1" autocomplete="off">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 campo">
+                                        <label for="nome">Nome e cognome</label>
+                                        <input type="text" id="nome" name="nome" required maxlength="120" autocomplete="name">
+                                    </div>
+                                    <div class="col-md-6 campo">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" required maxlength="160" autocomplete="email">
+                                    </div>
+                                    <div class="col-md-6 campo">
+                                        <label for="telefono">Telefono <small>(facoltativo)</small></label>
+                                        <input type="tel" id="telefono" name="telefono" maxlength="40" autocomplete="tel">
+                                    </div>
+                                    <div class="col-md-6 campo">
+                                        <label for="organizzazione">Città o attività <small>(facoltativo)</small></label>
+                                        <input type="text" id="organizzazione" name="organizzazione" maxlength="160">
+                                    </div>
+                                    <div class="col-12 campo">
+                                        <label for="messaggio">Che cosa vorresti sapere?</label>
+                                        <textarea id="messaggio" name="messaggio" required maxlength="5000"></textarea>
+                                    </div>
+                                </div>
+                                <label class="consenso">
+                                    <input type="checkbox" name="consenso" value="si" required>
+                                    <span>Ho letto l'<a href="privacy.html" target="_blank">informativa sul trattamento dei dati personali</a> e acconsento all'uso dei miei dati per essere ricontattato.</span>
+                                </label>
+                                <button type="submit" class="theme-btn">Invia la richiesta <i class="fa-solid fa-arrow-right"></i></button>
+                                <p class="esito" role="status" aria-live="polite"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
