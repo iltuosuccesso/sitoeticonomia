@@ -38,6 +38,9 @@ MENU = [
     ("contatti.html", "Contatti"),
 ]
 
+# Ultima voce del menu: l'area membri è la piattaforma Eticonomia v2.
+ACCEDI = "https://app.eticonomia.com/"
+
 INTESTAZIONE = re.compile(r"\A\s*<!--(.*?)-->\s*", re.S)
 
 
@@ -58,11 +61,12 @@ def leggi_pagina(percorso: Path) -> tuple[dict, str]:
 
 
 def menu_html(attiva: str) -> str:
-    """Restituisce le voci <li> del menu, con «active» sulla pagina aperta."""
+    """Restituisce le voci <li> del menu, con «active» sulla pagina aperta, più «Accedi»."""
     voci = []
     for file, etichetta in MENU:
         classe = ' class="active"' if file == attiva else ""
         voci.append(f'<li{classe}><a href="{file}">{etichetta}</a></li>')
+    voci.append(f'<li class="accedi"><a href="{ACCEDI}"><i class="fa-regular fa-user"></i> Accedi</a></li>')
     return "\n                                    ".join(voci)
 
 
